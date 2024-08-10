@@ -2,30 +2,47 @@ import { useEffect, useRef, useState } from "react";
 import ButtonHolder from "../ButtonComponents/ButtonHolder";
 import MoveableButton from "../ButtonComponents/MoveableButton";
 
+import { Link } from "react-router-dom";
+import Question from "./Question";
 function Main() {
+
+    //Define States for The Movalbe Button to know his Current Position
     const refChild = useRef(null);
     const [childPosition , setChildPosition] = useState();
+
+    //use Effect to Track Movable Button Places
     useEffect(()=>{
+        
+        //Get Active When Movable Button Moves and save his poition in insde state
         function track()
         {
-            // const ch = window.document.getElementsByName("c1");
-            // console.log(ch[0].offsetTop, ch[0].offsetLeft);
-            console.log(refChild.current.children[0].offsetLeft , refChild.current.children[0].offsetTop);
-            setChildPosition({ x : refChild.current.children[0].offsetLeft , y : refChild.current.children[0].offsetTop  })
+            const current = refChild.current.children[0];
+            setChildPosition({ x : current.offsetLeft , y : current.offsetTop  })
         }
-    
-       
+        
+        //Track Mouse Up So We Can Get Button Posiiton
         window.addEventListener('mouseup' , track)
     },[refChild])
+
     return ( <>
-        <div className="position-relative w-100">
-            {/* <MoveableButton text={"Button 1"} /> */}
-            <div ref={refChild}>
-             <MoveableButton  text={"Button 2"} name={"c1"} /> 
+            
+
+            {/* Div have Moveable Button And Button Holder To Test The Process of Tracking */}
+            {/* Dont Touch it Husam !!!!!! */}
+            <div className="position-relative w-100">
+                {/* <MoveableButton text={"Button 1"} /> */}
+                <div ref={refChild}>
+                    <MoveableButton  text={"Button 2"} name={"c1"} /> 
+                </div>
+                <ButtonHolder childPosition={childPosition}  />
             </div>
-           
-            <ButtonHolder childPosition={childPosition}  />
-        </div>
+               
+
+            
+            <div className="w-100">
+               
+                <Question/>
+            </div>
        
     </> );
 }
