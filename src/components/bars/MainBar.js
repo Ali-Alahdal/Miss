@@ -20,19 +20,15 @@ function MainBar() {
                         left: `${i}px`,
                         top: `${i}px`
                     
-                    }, {duration: 1000, fill: "forwards"})
-               
-              
+                    }, {duration: 1200, fill: "forwards"})
             }
             
-           console.log(currentElement)
+        console.log(currentElement + "Hello Ali")
         }
         if(followMode)
         {
             follow();
         }
-       
- 
 
 
     return (
