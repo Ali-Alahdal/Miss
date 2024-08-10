@@ -19,9 +19,9 @@ function MainBar() {
             
                 e.target.animate({
                         left: `${e.clientX  + 1}px`,
-                        top: `${i}px`
+                        
                     
-                    }, {duration: 4000, fill: "forwards"})
+                    }, {duration: 15000, fill: "forwards"})
                
               
             }
