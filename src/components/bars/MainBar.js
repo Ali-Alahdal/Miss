@@ -28,8 +28,6 @@ function MainBar() {
             
            console.log(e)
         }
-       
- 
 
 
     return (
