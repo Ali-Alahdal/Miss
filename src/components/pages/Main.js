@@ -1,8 +1,13 @@
-import MainBar from "../bars/MainBar";
+import { Link } from "react-router-dom";
+import MoveableButton from "../bars/MoveableButton";
+import Question from "./Question";
 function Main() {
     return ( <>
-        <MainBar />
-        
+        <div className="w-100">
+            <MoveableButton />
+            <Question/>
+        </div>
+       
     </> );
 }
 
