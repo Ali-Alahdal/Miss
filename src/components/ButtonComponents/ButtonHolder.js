@@ -2,33 +2,57 @@ import { useEffect, useRef, useState } from "react";
 
 function ButtonHolder(props) {
     const refDiv = useRef(null)
-    const [position , setPosition] = useState()
-    const [child , setChild] = useState(props.childPosition)
-
-
+   
+  
+    const [child , setChild] = useState(props.child);
+    const [isHeld , setIsHeld] = useState(false)
     useEffect(()=>{
-        setChild(props.childPosition);
-        function deced ()
-        {
-            if(child)
-                {
-                    const current = refDiv.current;
-                    if(child.x <= current.offsetLeft + current.offsetWidth - 10 && child.y <=  current.offsetTop + current.offsetHeight - 10  ){
-                         console.log("works" );
-                    }
-                }
-        }
-        console.log( refDiv);
+
+      
+        
+       
+      
      
-            deced()
+        function settleButton ()
+        {
+            const childPosition = child.current.children[0];
+            if(childPosition && !isHeld )
+            {
+                
+                const currentDiv = refDiv.current;
+
+
+                //calculating the distance between the div and the child button
+                let disLeft =  childPosition.offsetLeft - currentDiv.offsetLeft;
+                let disTop =  childPosition.offsetTop - currentDiv.offsetTop;
+
+                if( disLeft > -70 && disLeft < 95 && disTop < 45 ) 
+                {
+                    
+                    //Settle it inside this div
+                    childPosition.className = "bg-success border-0 m-auto text-white p-2 rounded-2"
+                    currentDiv.appendChild(childPosition);
+                    setIsHeld(true);
+                   
+                }
+            }
+        }
+
+
+
+        window.addEventListener('mouseup' , settleButton)
+           return() =>{
+            window.removeEventListener('mouseup' , settleButton);
+        }
+     
         
 
-    },[position,props.childPosition,child,refDiv]);
+    },[]);
      
     return (
         <>
-            <div ref={refDiv}   className="w-25 border border-3 border-secondary">
-                d
+            <div ref={refDiv}   className="position-relative border border-3 border-secondary text-center ms-auto "  style={{width:100,height:50}}>
+                
             </div>
         
         
