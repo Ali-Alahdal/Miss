@@ -4,3 +4,15 @@
 .qs_box{
   height: 500px;
 }
+.answer_btn{
+  
+  
+}
+.answer_btn::after{
+  
+}
+.broke_btn{
+  background-image: url(../public/crack.png);
+  background-size: 40px;
+  background-repeat: no-repeat;
+}

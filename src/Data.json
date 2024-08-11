@@ -8,7 +8,8 @@
       {
         "value" : "22"
       }
-    ]
+    ],
+    "rightAnswer" : "21"
   },
   {
     "question":"2- To follow the questions, click on the red button.",
@@ -19,7 +20,8 @@
       {
         "value" : "green"
       }
-    ]
+    ],
+    "rightAnswer" : "red"
   },
   {
     "question":"3- Find the button and put it in the right place.",
@@ -30,7 +32,8 @@
       {
         "value" : "True"
       }
-    ]
+    ],
+    "rightAnswer" : "True"
   },
   {
     "question":"4- When it comes to work-life balance, which do you prioritize?",
@@ -41,7 +44,8 @@
       {
         "value" : "Personal time"
       }
-    ]
+    ],
+    "rightAnswer" : "Career advancement"
   },
   {
     "question":"5- Do you prefer to let your ideas brew or stir the pot?",
@@ -52,7 +56,8 @@
       {
         "value" : "Stir the pot"
       }
-    ]
+    ],
+    "rightAnswer" : "Brew"
   },
   {
     "question":"6- To play the sound solve this puzzle",
@@ -63,7 +68,8 @@
       {
         "value" : "False"
       }
-    ]
+    ],
+    "rightAnswer" : "True"
   },
   {
     "question":"7- What is the most common color on the page?",
@@ -74,7 +80,8 @@
       {
         "value" : "red"
       }
-    ]
+    ],
+    "rightAnswer" : "red"
   },
   {
     "question":"8- Touch all items on the page.",
@@ -85,7 +92,8 @@
       {
         "value" : "False"
       }
-    ]
+    ],
+    "rightAnswer" : "True"
   },
   {
     "question":"9- Wait 10 seconds to continue.",
@@ -96,7 +104,8 @@
       {
         "value" : "False"
       }
-    ]
+    ],
+    "rightAnswer" : "True"
   },
   {
     "question":"10- Click Finish to end the game.",
@@ -107,6 +116,7 @@
       {
         "value" : "True"
       }
-    ]
+    ],
+    "rightAnswer" : "True"
   }
 ]
