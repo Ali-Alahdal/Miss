@@ -1,3 +1,6 @@
+body , #root{
+  height: 100vh;
+}
 .qs_style{
   height: 100vh;
 }
