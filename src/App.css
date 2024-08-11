@@ -1,5 +1,9 @@
 body , #root{
   height: 100vh;
+  
+}
+body{
+  cursor: url('./Cursor.png') , auto;
 }
 .qs_style{
   height: 100vh;
