@@ -58,9 +58,7 @@ function Main() {
                 </div>
             </div> */}
             
-            <div className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-cente bg-danger">
-
-               
+            <div className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center" style={{backgroundColor:"#c47d51"}}>
 
                 <Question question={currentQuestion} checkAnswer={checkAnswer} answers={currentAnswers} st={""} />
                <BreakableButton/>

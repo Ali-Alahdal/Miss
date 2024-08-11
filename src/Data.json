@@ -7,7 +7,11 @@
       },
       {
         "value" : "22"
+      },
+      {
+        "value" : "22"
       }
+
     ],
     "rightAnswer" : "21"
   },
@@ -19,6 +23,9 @@
       },
       {
         "value" : "green"
+      },
+      {
+        "value" : "22"
       }
     ],
     "rightAnswer" : "red"
@@ -31,6 +38,9 @@
       },
       {
         "value" : "True"
+      },
+      {
+        "value" : "22"
       }
     ],
     "rightAnswer" : "True"
@@ -43,6 +53,9 @@
       },
       {
         "value" : "Personal time"
+      },
+      {
+        "value" : "22"
       }
     ],
     "rightAnswer" : "Career advancement"
@@ -55,6 +68,9 @@
       },
       {
         "value" : "Stir the pot"
+      },
+      {
+        "value" : "22"
       }
     ],
     "rightAnswer" : "Brew"
@@ -67,6 +83,9 @@
       },
       {
         "value" : "False"
+      },
+      {
+        "value" : "22"
       }
     ],
     "rightAnswer" : "True"
@@ -79,6 +98,9 @@
       },
       {
         "value" : "red"
+      },
+      {
+        "value" : "22"
       }
     ],
     "rightAnswer" : "red"
@@ -91,6 +113,9 @@
       },
       {
         "value" : "False"
+      },
+      {
+        "value" : "22"
       }
     ],
     "rightAnswer" : "True"
@@ -103,6 +128,9 @@
       },
       {
         "value" : "False"
+      },
+      {
+        "value" : "22"
       }
     ],
     "rightAnswer" : "True"
@@ -115,6 +143,9 @@
       },
       {
         "value" : "True"
+      },
+      {
+        "value" : "22"
       }
     ],
     "rightAnswer" : "True"
