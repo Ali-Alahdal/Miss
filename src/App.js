@@ -6,9 +6,10 @@ import Header from './components/Layout/Header';
 function App() {
   return (
     <>
-        <div className='w-100 h-100 bg-primary align-center pt-5'>
-          <Header />
+        <div className='w-100 h-100 bg-secondary align-center pt-5'>
+         
           <BrowserRouter >
+            <Header />
             <Routes>
 
               <Route index path='/' element={<Main />} />

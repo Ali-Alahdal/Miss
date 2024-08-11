@@ -4,7 +4,7 @@ import Data from "../../Data.json";
 function Question(props) {
     const refBtn = useRef(null);
     const [answers , setAnswers ] = useState(props.answers);
-    const [btnStyle , setBtnStyle ] = useState("answer_btn btn btn-primary mt-5 m-3 text-light")
+   
     useEffect(() =>{
       setAnswers(props.answers);
       
@@ -17,12 +17,13 @@ function Question(props) {
 
   return (
     <>
-    <div className="w-100   text-center  ">
-        <h2 className="">{props.question}</h2>
+    <div className="w-100   text-center text-light ">
+        <h2 className="mb-5">{props.question}</h2>
+        
         { answers ?  answers.map((answer,index)=> {
          
            return(
-            <button ref={refBtn}  onClick={props.checkAnswer} name={answer.value}   className="answer_btn btn btn-primary mt-5 m-3 text-light pe-4 ps-4" key={index}>
+            <button ref={refBtn}  onClick={props.checkAnswer} name={answer.value}   className="btn text-light bg-success border-0  pe-5 ps-5 ms-5 mt-5 me-5 rounded-pill " key={index}>
                 {answer.value}
               </button>
            ) ;  
