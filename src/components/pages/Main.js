@@ -4,6 +4,7 @@ import MoveableButton from "../ButtonComponents/MoveableButton";
 import Data from "../../Data.json"
 import { Link } from "react-router-dom";
 import Question from "./Question";
+import BreakableButton from "../ButtonComponents/BreakableButton";
 function Main() {
 
     //Define States for The Movalbe Button to know his Current Position
@@ -62,7 +63,7 @@ function Main() {
                
 
                 <Question question={currentQuestion} checkAnswer={checkAnswer} answers={currentAnswers} st={""} />
-               
+               <BreakableButton/>
             </div>
        
     </> );
