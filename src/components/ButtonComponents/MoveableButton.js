@@ -5,10 +5,10 @@ function MoveableButton(props) {
     const refDiv = useRef(null);
     //Defining States
     const [isFollowing, setIsFollowing] = useState(false);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [position, setPosition] = useState({ x: props.pos.x, y: props.pos.y });
 
     useEffect(() =>{
-
+        
         //Follow 
         function follow(e)
         {
@@ -49,7 +49,7 @@ function MoveableButton(props) {
 
   return (
       // A Button With Some Style
-      <button ref={refDiv}  onPointerDown={clickMouseDown} onPointerUp={clickMouseUp}   style={{top:position.y,left:position.x}}  className="bg-success border-0 m-auto text-white p-2 rounded-2 position-absolute" >{props.text} </button>
+      <button ref={refDiv}  onPointerDown={clickMouseDown} onPointerUp={clickMouseUp}   style={{top:position.y,left:position.x}}  className={" border-0 m-auto text-white p-2  position-absolute pe-5 ps-5 rounded-pill border-bottom border-3 border-"+props.color +  "-subtle  bg-"   + props.color} >{props.text} </button>
      
   );
 }

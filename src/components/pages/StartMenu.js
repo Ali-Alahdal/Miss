@@ -16,7 +16,9 @@ function StartMenu() {
     return ( 
         <>
             <div className="w-100 text-center ">
+
                 <h1 className="mb-5 text-white">Game Name</h1>
+
                 <div className="d-flex m-auto">
                     <ul className="list-unstyled d-flex m-auto text-white fs-5 ">
 
@@ -29,12 +31,12 @@ function StartMenu() {
 
                         <li onClick={handleStart} style={{cursor: "pointer"}} className="me-5 ms-5 mt-5 bg-success rounded-pill  ps-5 pe-5 p-2 border-bottom border-success-subtle border-3" >
 
-                             Start 
-                                                    
+                             Start              
                          </li>
                       
                     </ul>
                 </div>
+                
             </div>
         </>
      );
