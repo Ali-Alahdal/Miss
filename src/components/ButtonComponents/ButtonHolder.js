@@ -40,10 +40,11 @@ function ButtonHolder(props) {
 
 
 
-        window.addEventListener('mouseup' , settleButton)
-           return() =>{
-            window.removeEventListener('mouseup' , settleButton);
-        }
+            window.addEventListener('mouseup' , settleButton);
+            
+            return() =>{
+                window.removeEventListener('mouseup' , settleButton);
+            }
      
         
 

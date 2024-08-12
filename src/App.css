@@ -12,37 +12,36 @@ body , #root{
 .first_btn{
   position: relative;
   animation-name: firstFall;
-  animation-duration: 2s;
+  animation-duration: 0.1s;
   animation-fill-mode: forwards;
-  transition: all 1s linear;
+  transition: all 0.5s linear;
 }
 .sec_btn{
   position: relative;
   animation-name: secFall;
-  animation-duration: 2s;
+  animation-duration: 0.1s;
   animation-fill-mode: forwards;
-  transition: all 1s linear;
+  transition: all 0.5s linear;
 }
 @keyframes firstFall {
   from {
-    transform: translateY(0);
+    transform: translateX(0);
 
 }
-
   to {
-    transform: translateY(230px);
-
-    opacity: 0;
+   
+    transform: translate(-10px ,10px) rotate(-20deg) ;
 }
 }
 
 @keyframes secFall {
   from {
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
   to {
-    transform: translateY(230px);
-    opacity: 0;
+    transform: translateX(10px) rotate(5deg);
+    
+   
 }
 }
