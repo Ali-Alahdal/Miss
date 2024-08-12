@@ -5,12 +5,14 @@ import Data from "../../Data.json"
 import { Link } from "react-router-dom";
 import Question from "./Question";
 import Count from "../../Context/CountContext";
+import Start from "../../Context/StartContext";
 import StartMenu from "./StartMenu";
 import BreakableButton from "../ButtonComponents/BreakableButton";
+import Hammer from "../ButtonComponents/Hammer";
 function Main() {
 
     //Define States for The Movalbe Button to know his Current Position
-    const [start , setStart ] = useState(false)
+    const {start , setStart } = useContext(Start)
     
 
     const [currentQuestion, setCurrentQuestion] = useState("");
@@ -41,7 +43,6 @@ function Main() {
     function checkAnswer(e){
         
         if(e.target.name === correctAnswer){
-            setStart(true)
             setIsCorrect(true)
             
             setTimeout(() => {
@@ -85,7 +86,7 @@ function Main() {
                 {start && count != null ? <Question question={currentQuestion} checkAnswer={checkAnswer} answers={currentAnswers} isCorrect={isCorrect} />
                 :
                 <StartMenu/>}
-                
+                <Hammer/>
                
             </div>
        
