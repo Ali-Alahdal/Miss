@@ -4,20 +4,20 @@ import Data from "../../Data.json";
 function Question(props) {
     const refBtn = useRef(null);
     const [answers , setAnswers ] = useState(props.answers);
-   
+    const [isCorrect , setIsCorrect] = useState(props.isCorrect)
     useEffect(() =>{
       setAnswers(props.answers);
-      
+      setIsCorrect(props.isCorrect)
      
       
-    },[props.answers,props.question])
+    },[props.answers,props.question,props.isCorrect])
 
  
 
 
   return (
     <>
-    <div className="w-100   text-center text-light ">
+    {!isCorrect ?  <div className="w-100   text-center text-light ">
         <h2 className="mb-5">{props.question}</h2>
         
         { answers ?  answers.map((answer,index)=> {
@@ -29,7 +29,15 @@ function Question(props) {
            ) ;  
           })
         : null }
-    </div>  
+    </div>   : 
+      <div className="w-100 display-1  text-center">
+          <i class="bi bi-check2 display-1 text-success w-100 h-100"></i>
+
+      </div>
+    
+    
+    }
+   
      
          
               
