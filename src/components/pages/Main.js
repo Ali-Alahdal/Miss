@@ -38,6 +38,12 @@ function Main() {
       
     }, [count]);
 
+    useEffect(()=>{
+        const startValue = localStorage.getItem("start");
+        if (startValue) {
+            setStart(startValue === "true");
+        }
+    },[])
 
 
     function checkAnswer(e){

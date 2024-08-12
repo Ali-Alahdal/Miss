@@ -23,8 +23,9 @@ function Header() {
     }
 
     function surrender(){
-        localStorage.setItem("start", start)
-        setStart(start? false: true)
+        localStorage.setItem("start", "false")
+        setStart(false)
+        setCount(0)
     }
     return (<header className="w-75 m-auto rounded-5 ps-5 pe-5 d-flex align-items-center border  " style={{height:"10%",backgroundColor:"#c47d51",borderBottom:"#e3a57f"}}>
             <ul className="w-100 list-unstyled d-flex justify-content-between align-items-center mt-auto  ">
@@ -42,7 +43,7 @@ function Header() {
                 </li>
                 <li className="">
                     <Link onClick={surrender} to={"/"} className="text-decoration-none bg-danger text-white p-2 rounded-pill ps-5 pe-5  border-bottom border-danger-subtle border-3" >
-                        <i class="bi bi-flag-fill"></i>  Surrender
+                        <i className="bi bi-flag-fill"></i>  Surrender
                     </Link>
                 </li>
                 
