@@ -22,12 +22,23 @@ function Main() {
     const [isCorrect, setIsCorrect] = useState(false)
 
     useEffect(() => {
-        setCurrentQuestion(Data[count].question);
-        setCurrentAnswers(Data[count].answers);
-        setCorrectAnswer(Data[count].rightAnswer);
-        setCount(parseInt(localStorage.getItem("count")))
-    }, [count,localStorage]);
-    
+        if(count){
+            setCurrentQuestion(Data[count].question);
+            setCurrentAnswers(Data[count].answers);
+            setCorrectAnswer(Data[count].rightAnswer);
+            setCount(parseInt(localStorage.getItem("count")))
+        }else{
+            localStorage.setItem("count" , 0)
+            setCount(parseInt(localStorage.getItem("count")))
+            setCurrentQuestion(Data[0].question);
+            setCurrentAnswers(Data[0].answers);
+            setCorrectAnswer(Data[0].rightAnswer);
+        
+        }
+      
+    }, [count]);
+
+
 
     function checkAnswer(e){
         
@@ -70,9 +81,9 @@ function Main() {
                 </div>
             </div> */}
             
-            <div className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center" style={{backgroundColor:"#c47d51"}}>
-                <BreakableButton />
-                {start ? <Question question={currentQuestion} checkAnswer={checkAnswer} answers={currentAnswers} isCorrect={isCorrect} />
+            <div className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center rounded-4" style={{backgroundColor:"#c47d51"}}>
+              
+                {start && count != null ? <Question question={currentQuestion} checkAnswer={checkAnswer} answers={currentAnswers} isCorrect={isCorrect} />
                 :
                 <StartMenu/>}
                 <Hammer/>

@@ -34,9 +34,10 @@ function Header() {
                     <i class="bi bi-arrow-left "></i> Back
                     </Link>
                 </li>
-                <li className="">
-                    <Link onClick={Rest} to={"/"} className="text-decoration-none bg-primary text-white p-2 rounded-pill ps-5 pe-5 border-bottom border-primary-subtle border-3 " >
-                        <i class="bi bi-hammer"></i> Rest
+                <li className="position-relative text-white">
+                    <i class="bi bi-hammer  position-absolute  " style={{left:"22%",lineHeight:"1.7em"}}></i>
+                    <Link onClick={Rest} to={"/"} className="text-decoration-none  text-white bg-primary text-white  p-2 rounded-pill ps-5 pe-5 border-bottom border-primary-subtle border-3 " >
+                        Rest
                     </Link>
                 </li>
                 <li className="">

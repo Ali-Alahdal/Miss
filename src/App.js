@@ -8,6 +8,7 @@ import { RouterProvider } from 'react-router-dom';
 import Count from './Context/CountContext';
 import Start from './Context/StartContext';
 function App() {
+  
   const [count , setCount ] = useState(localStorage.getItem("count"))
   const [start , setStart ] = useState(localStorage.getItem("start"))
   return (
@@ -15,17 +16,21 @@ function App() {
         <div className='w-100 h-100 bg-secondary align-center pt-5'>
          
           <BrowserRouter >
-            <Count.Provider value={{count , setCount}}>
-              <Start.Provider value={{start, setStart}}>
+            <div className='w-100 h-100 '>
+              <button className='position-absolute ' style={{left:"50%"}}></button>
+              <Count.Provider value={{count , setCount}}>
+                <Start.Provider value={{start, setStart}}>
+                  <Header />
+                  <Routes>
 
-              <Header />
-              <Routes>
+                    <Route index path='/' element={<Main />} />
 
-                <Route index path='/' element={<Main />} />
-                
-              </Routes>
-              </Start.Provider>
-            </Count.Provider>
+                  </Routes>
+                </Start.Provider>
+              </Count.Provider>
+          
+            </div>
+
           </BrowserRouter>
         </div>
     </>
