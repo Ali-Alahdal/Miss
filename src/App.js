@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import Count from './Context/CountContext';
 import Start from './Context/StartContext';
+import MoveableButton from './components/ButtonComponents/MoveableButton';
 function App() {
   
   const [count , setCount ] = useState(localStorage.getItem("count"))
@@ -17,7 +18,7 @@ function App() {
          
           <BrowserRouter >
             <div className='w-100 h-100 '>
-              <button className='position-absolute ' style={{left:"50%"}}></button>
+              <MoveableButton text={"w"} color="success" />
               <Count.Provider value={{count , setCount}}>
                 <Start.Provider value={{start, setStart}}>
                   <Header />

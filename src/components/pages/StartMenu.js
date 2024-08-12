@@ -1,9 +1,12 @@
 import BreakableButton from "../ButtonComponents/BreakableButton";
+
 function StartMenu() {
     return ( 
         <>
             <div className="w-100 text-center ">
+
                 <h1 className="mb-5 text-white">Game Name</h1>
+
                 <div className="d-flex m-auto">
                     <ul className="list-unstyled d-flex m-auto text-white fs-5 ">
 
@@ -22,6 +25,7 @@ function StartMenu() {
                       
                     </ul>
                 </div>
+                
             </div>
         </>
      );

@@ -86,7 +86,7 @@ function Main() {
                 {start && count != null ? <Question question={currentQuestion} checkAnswer={checkAnswer} answers={currentAnswers} isCorrect={isCorrect} />
                 :
                 <StartMenu/>}
-                <Hammer/>
+              
                
             </div>
        
