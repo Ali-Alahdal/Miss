@@ -25,8 +25,9 @@ function Header() {
     }
 
     function surrender(){
-        localStorage.setItem("start", start)
-        setStart(start? false: true)
+        localStorage.setItem("start", "false")
+        setStart(false)
+        setCount(0)
     }
 
     useEffect(()=>{
@@ -70,7 +71,7 @@ function Header() {
                 </li>
                 <li className="">
                     <Link onClick={surrender} to={"/"} className="text-decoration-none bg-danger text-white p-2 rounded-pill ps-5 pe-5  border-bottom border-danger-subtle border-3" >
-                        <i class="bi bi-flag-fill"></i>  Surrender
+                        <i className="bi bi-flag-fill"></i>  Surrender
                     </Link>
                 </li>
                 

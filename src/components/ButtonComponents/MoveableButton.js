@@ -5,10 +5,10 @@ function MoveableButton(props) {
     const refDiv = useRef(null);
     //Defining States
     const [isFollowing, setIsFollowing] = useState(false);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [position, setPosition] = useState({ x: props.pos.x, y: props.pos.y });
 
     useEffect(() =>{
-
+        
         //Follow 
         function follow(e)
         {
