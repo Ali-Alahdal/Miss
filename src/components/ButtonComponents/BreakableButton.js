@@ -16,8 +16,8 @@ function BreakableButton() {
   return (
     <>
       <button className='btn btn-light' name={"btnBreak"} onClick={splitString}>btnBreak</button>
-      <span className='first_btn btn btn-light' style={firstHalf ? {display: 'block'}: {display: 'none'}}>{firstHalf}</span>
-      <span className='sec_btn btn btn-light' style={secHalf ? {display: 'block'}: {display: 'none'}}>{secHalf}</span>
+      <span className='first_btn btn ' style={firstHalf ? {display: 'block'}: {display: 'none'}}>{firstHalf}</span>
+      <span className='sec_btn btn ' style={secHalf ? {display: 'block'}: {display: 'none'}}>{secHalf}</span>
     </>
   )
 }

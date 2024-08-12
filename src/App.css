@@ -8,26 +8,41 @@ body , #root{
 .qs_box{
   height: 500px;
 }
-.broke_btn{
-  background-image: url(../public/crack.png);
-  background-size: 40px;
-  background-repeat: no-repeat;
-}
+
 .first_btn{
   position: relative;
-  bottom: -200px;
-  left: -30px;
-  transition: 1s;
-
+  animation-name: firstFall;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  transition: all 1s linear;
 }
 .sec_btn{
   position: relative;
-  bottom: -200px;
-  right: -30px;
-  transform: translateX(-10);
-  transition: 1s;
-  -webkit-transform: translateX(-10);
-  -moz-transform: translateX(-10);
-  -ms-transform: translateX(-10);
-  -o-transform: translateX(-10);
+  animation-name: secFall;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  transition: all 1s linear;
+}
+@keyframes firstFall {
+  from {
+    transform: translateY(0);
+
+}
+
+  to {
+    transform: translateY(230px);
+
+    opacity: 0;
+}
+}
+
+@keyframes secFall {
+  from {
+    transform: translateY(0);
+}
+
+  to {
+    transform: translateY(230px);
+    opacity: 0;
+}
 }
