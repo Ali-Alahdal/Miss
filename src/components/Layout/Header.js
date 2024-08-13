@@ -53,15 +53,15 @@ function Header() {
        
     },[resRef,window])
     
-    return (<header className="w-75 m-auto rounded-5 ps-5 pe-5 d-flex align-items-center border  " style={{height:"10%",backgroundColor:"#c47d51",borderBottom:"#e3a57f"}}>
+    return (<header className="w-75 m-auto rounded-5 ps-5 pe-5 d-flex align-items-center border position-absolute start-50  translate-middle z-3  " style={{height:"10%",backgroundColor:"#c47d51",borderBottom:"#e3a57f",top:"12%"}}>
             <ul className="w-100 list-unstyled d-flex justify-content-between align-items-center mt-auto  ">
                 <li className="">
               
-                    <Link onClick={Back} to={"/"} className="text-decoration-none bg-warning text-white p-2 rounded-pill ps-5 pe-5 border-bottom border-warning-subtle border-3 " >
+                    <Link onClick={Back} to={"/"} className="text-decoration-none bg-warning text-white p-2 rounded-pill ps-5 pe-5 border-bottom border-warning-subtle border-3  " >
                     <i class="bi bi-arrow-left "></i> Back
                     </Link>
                 </li>
-                <li className=" text-white">
+                <li className=" z-3 text-white">
                     
                     {hammerPosition ? <Hammer pos={{x : hammerPosition.x , y :  hammerPosition.y}} /> : null}
                    
