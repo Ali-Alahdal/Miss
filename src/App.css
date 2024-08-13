@@ -10,6 +10,8 @@ body , #root{
    */
    -ms-user-select: none;
    user-select: none;
+   overflow: hidden;
+ 
 }
 
 

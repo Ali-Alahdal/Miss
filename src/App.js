@@ -21,7 +21,7 @@ function App() {
     const placeX = Math.random(1 , 5000);
     const placeY= Math.random(1 , 10000);
 
-    console.log({x : placeX , y : placeY});
+    // console.log({x : placeX , y : placeY});
     
     return {x : placeX , y : placeY};
   }
@@ -30,20 +30,29 @@ function App() {
         <div className='w-100 h-100 bg-secondary align-center pt-5'>
          
           <BrowserRouter >
-            <div className='w-100 h-100 '>\
+            <div className='w-100 h-100 '>
              
              
               <Count.Provider value={{count , setCount}}>
                 <Start.Provider value={{start, setStart}}>
                   {Answers.map((answer , index) =>{
+                       const r =  parseInt(Math.random()*2)
+                       const rC =  parseInt(Math.random()*6)
+                       console.log(Math.floor(Math.random() * 701) + 700);
+
+                       const colors = [
+                        "success" , "danger" , "info" , "primary" , "warning" , "secondary"
+                       ]
+                      const rD = parseInt(Math.random()*360)
                   return(
-                    <MoveableButton key={index} text={answer.value} color="success" pos={{x : Math.random(1 , window.screen.width) * 1000 , y : Math.random(1 , 10000) * 550}} />
+                 
+                    <MoveableButton key={index} style={rD} text={answer.value} color={colors[rC]} pos={{x : r == 1 ? parseInt(Math.random()*100) : Math.floor(Math.random() * (1170 - 1100 + 1) ) + 1100 , y : Math.random(1 , 10000) * 550}} />
                   );
                 })}
                   <Header />
                   <Routes>
 
-                    <Route index path='/' element={<Main />} />
+                    <Route  index path='/' element={<Main  />} />
 
                   </Routes>
                 </Start.Provider>
