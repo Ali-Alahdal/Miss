@@ -23,8 +23,8 @@ function StartMenu() {
                     <ul className="list-unstyled d-flex mb-0 text-white fs-5 ">
 
                         <li  className="">
-                            <BreakableButton text={"Hint"} style={"hover_btn border-0 text-white me-1 bg-warning rounded-pill btn border-0 text-light ps-5 pe-5 border-bottom border-warning-subtle border-3"}
-                            styleS={"border-0    bg-warning rounded-pill  p-2 border-bottom border-warning-subtle border-3"}
+                            <BreakableButton text={"Hint"} style={"hover_btn border-0 text-white me-4  bg-warning rounded-pill btn border-0 text-light ps-5 pe-5 border-bottom border-warning-subtle border-3"}
+                            styleS={"border-0 bg-warning rounded-pill  border-bottom border-warning-subtle border-3"}
                             
                             />
                         </li>
