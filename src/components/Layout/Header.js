@@ -53,11 +53,11 @@ function Header() {
        
     },[resRef,window])
     
-    return (<header className="w-75 m-auto rounded-5 ps-5 pe-5 d-flex align-items-center border position-absolute start-50  translate-middle z-3  " style={{height:"10%",backgroundColor:"#c47d51",borderBottom:"#e3a57f",top:"12%"}}>
-            <ul className="w-100 list-unstyled d-flex justify-content-between align-items-center mt-auto  ">
+    return (<header className="w-75  rounded-5  d-flex align-items-center border position-absolute start-50  translate-middle z-3  " style={{backgroundColor:"#c47d51",borderBottom:"#e3a57f",top:"12%"}}>
+            <ul className="w-100 list-unstyled d-flex justify-content-between align-items-center m-2  ">
                 <li className="">
               
-                    <Link onClick={Back} to={"/"} className="text-decoration-none bg-warning text-white p-2 rounded-pill ps-5 pe-5 border-bottom border-warning-subtle border-3  " >
+                    <Link onClick={Back} to={"/"} className="hover_btn text-decoration-none bg-warning text-white btn border-0 ps-3 pe-3 rounded-pill  border-bottom border-warning-subtle border-3  " >
                     <i class="bi bi-arrow-left "></i> Back
                     </Link>
                 </li>
@@ -65,12 +65,12 @@ function Header() {
                     
                     {hammerPosition ? <Hammer pos={{x : hammerPosition.x , y :  hammerPosition.y}} /> : null}
                    
-                    <Link  ref={resRef} onClick={Rest} to={"/"} className="text-decoration-none  text-white bg-primary text-white  p-2 rounded-pill ps-5 pe-5 border-bottom border-primary-subtle border-3 " >
+                    <Link  ref={resRef} onClick={Rest} to={"/"} className="hover_btn text-decoration-none  text-white bg-primary text-white  btn border-0 ps-3 pe-3 rounded-pill border-bottom border-primary-subtle border-3 " >
                         Rest
                     </Link>
                 </li>
                 <li className="">
-                    <Link onClick={surrender} to={"/"} className="text-decoration-none bg-danger text-white p-2 rounded-pill ps-5 pe-5  border-bottom border-danger-subtle border-3" >
+                    <Link onClick={surrender} to={"/"} className="hover_btn text-decoration-none bg-danger text-white btn border-0 ps-3 pe-3 rounded-pill border-bottom border-danger-subtle border-3" >
                         <i className="bi bi-flag-fill"></i>  Surrender
                     </Link>
                 </li>

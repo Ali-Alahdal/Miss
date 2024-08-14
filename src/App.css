@@ -21,6 +21,10 @@ body , #root{
 .qs_box{
   height: 500px;
 }
+.hover_btn:hover{
+  background-color: #0000007a !important;
+}
+
 
 .first_btn{
   position: relative;
