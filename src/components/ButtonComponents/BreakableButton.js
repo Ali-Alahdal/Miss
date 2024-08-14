@@ -20,8 +20,9 @@ function BreakableButton(props) {
       {!isbroken ?
         <input  type='button' value={ props.text} onClick={splitString} className={props.style}/> :
 
-        <div className='mt-5 d-flex ms-5 me-5'>
+        <div className=' d-flex ms-2 me-0'>
           <span className={props.styleS +  "  first_btn rounded-end-0 ps-5 "} style={firstHalf ? {display: 'block'}: {display: 'none'}}>{firstHalf}</span>
+          <span className='crumbs'></span>
           <span className={props.styleS +  "  sec_btn rounded-start-0 pe-5 "} style={secHalf ? {display: 'block'}: {display: 'none'}}>{secHalf}</span>
         </div>
       }

@@ -54,7 +54,7 @@ function Header() {
     },[resRef,window])
     
     return (<header className="w-75  rounded-5  d-flex align-items-center border position-absolute start-50  translate-middle z-3  " style={{backgroundColor:"#c47d51",borderBottom:"#e3a57f",top:"12%"}}>
-            <ul className="w-100 list-unstyled d-flex justify-content-between align-items-center m-2  ">
+            <ul className="w-100 list-unstyled d-flex justify-content-around align-items-center m-2  ">
                 <li className="">
               
                     <Link onClick={Back} to={"/"} className="hover_btn text-decoration-none bg-warning text-white btn border-0 ps-3 pe-3 rounded-pill  border-bottom border-warning-subtle border-3  " >

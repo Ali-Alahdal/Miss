@@ -22,7 +22,8 @@ body , #root{
   height: 500px;
 }
 .hover_btn:hover{
-  background-color: #0000007a !important;
+  /* border: solid #474747ab 3px !important; */
+  opacity: 0 !important;
 }
 
 
@@ -39,6 +40,40 @@ body , #root{
   animation-duration: 0.1s;
   animation-fill-mode: forwards;
   transition: all 0.5s linear;
+}
+
+.crumbs{
+  position: relative;
+  bottom: -50px;
+  width: 10px;
+  height: 10px;
+  border-right: yellow solid 5px;
+  border-top: transparent solid 5px;
+  border-bottom: transparent solid 5px;
+  border-left: transparent solid 5px; 
+  animation-name: crumbs;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  transition: all 0.5s ease;
+}
+.crumbs::after{
+  position: absolute;
+  bottom: 7px;
+  content: "";
+  border-top: yellow solid 5px;
+  border-right: transparent solid 5px;
+  border-bottom: transparent solid 5px;
+  border-left: transparent solid 5px; 
+}
+.crumbs::before{
+  position: absolute;
+  bottom: 5px;
+  left: -10px;
+  content: "";
+  border-bottom: yellow solid 5px;
+  border-right: transparent solid 5px;
+  border-top: transparent solid 5px;
+  border-left: transparent solid 5px; 
 }
 @keyframes firstFall {
   from {
@@ -58,6 +93,18 @@ body , #root{
 
   to {
     transform: translateX(10px) rotate(5deg);
+    
+   
+}
+}
+
+@keyframes crumbs {
+  from {
+    transform: translateY(-20px);
+}
+
+  to {
+    transform: translateX(0) rotate(5deg);
     
    
 }
