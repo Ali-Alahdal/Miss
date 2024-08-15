@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import IsCorrect from "../../Context/IsCorrectContext";
 
 function ButtonHolder(props) {
     const refDiv = useRef(null)
    
-  
+    
     const [child , setChild] = useState(props.child);
     const [isHeld , setIsHeld] = useState(false)
+    const  {setIsCorrect }   = useContext(IsCorrect);
     useEffect(()=>{
 
       
@@ -15,7 +17,9 @@ function ButtonHolder(props) {
      
         function settleButton ()
         {
-            const childPosition = child.current.children[0];
+            const childPosition = props.child;
+            console.log(props.child);
+            
             if(childPosition && !isHeld )
             {
                 
@@ -23,16 +27,19 @@ function ButtonHolder(props) {
 
 
                 //calculating the distance between the div and the child button
-                let disLeft =  childPosition.offsetLeft - currentDiv.offsetLeft;
-                let disTop =  childPosition.offsetTop - currentDiv.offsetTop;
-
-                if( disLeft > -70 && disLeft < 95 && disTop < 45 ) 
+                let disLeft =  childPosition.offsetLeft - currentDiv.offsetParent.offsetLeft + currentDiv.offsetWidth / 2;
+                let disTop =  childPosition.offsetTop - currentDiv.offsetParent.offsetTop;
+               
+                
+                if( disLeft > -45 && disLeft < 195 && disTop < 60 && disTop > -25 ) 
                 {
                     
                     //Settle it inside this div
-                    childPosition.className = "bg-success border-0 m-auto text-white p-2 rounded-2"
+                    childPosition.className = "bg-success border-0  m-auto text-white p-2 rounded-2 w-100 rounded-pill h-100 border-bottom border-success-subtle border-3"
                     currentDiv.appendChild(childPosition);
+                  
                     setIsHeld(true);
+                    setIsCorrect(true)
                    
                 }
             }
@@ -48,16 +55,17 @@ function ButtonHolder(props) {
      
         
 
-    },[]);
+    },[IsCorrect,props.child]);
      
     return (
         <>
-            <div ref={refDiv}   className="position-relative border border-3 border-secondary text-center ms-auto "  style={{width:100,height:50}}>
+            <div ref={refDiv}   className={ !isHeld ? "position-relative border border-3 border-secondary text-center m-auto rounded-pill " :  " position-relative  text-center m-auto " }  style={{width:"15%",height:50}}>
                 
             </div>
         
         
         </>
+        
       );
 }
 
