@@ -24,6 +24,7 @@ body , #root{
 .hover_btn:hover{
   /* border: solid #474747ab 3px !important; */
   opacity: 0 !important;
+  transition: linear 0.1s ;
 }
 
 
