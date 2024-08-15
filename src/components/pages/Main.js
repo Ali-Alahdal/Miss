@@ -57,7 +57,7 @@ function Main() {
                 setCount(prev => prev + 1);
                 localStorage.setItem("count" , parseInt( currentCount));
                 
-            }, 3 * 1000);
+            }, 1 * 1000);
             
         }else{
             console.log("wrong Answer");
@@ -87,7 +87,7 @@ function Main() {
                 </div>
             </div> */}
             
-            <div className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center rounded-4 z-2 position-absolute  start-50 translate-middle" style={{backgroundColor:"#c47d51" , top:"55%"}}>
+            <div className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center border rounded-4 z-2 position-absolute  start-50 translate-middle" style={{backgroundColor:"#c47d51" , top:"55%"}}>
               
                 {start && count != null ? <Question question={currentQuestion} checkAnswer={checkAnswer} answers={currentAnswers} isCorrect={isCorrect} />
                 :
