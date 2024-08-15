@@ -1,13 +1,118 @@
 [
   {
-    "question":"1- How many letters are there?",
+    "question":"1- He fades away and disappears completely as soon as you say his name, who is he?",
   
-    "rightAnswer" : "21"
+    "rightAnswer" : "Silence"
   },
   {
-    "question":"2- To follow the questions, click on the red button.",
+    "question":"2- What holds you while you hold it at the same time?",
    
-    "rightAnswer" : "red1"
+    "rightAnswer" : "The shoe"
+  },
+  {
+    "question":"3- Something you give to a million people, and yet it stays with you without losing anything, what is it?",
+   
+    "rightAnswer" : "Advice"
+  },
+  {
+    "question":"4- Yellow like gold, its head is used by humans and its leg by animals. What is it?",
+   
+    "rightAnswer" : "Wheat ears"
+  },
+  {
+    "question":"5- It has 5 fingers but it is not human, it has skin but it is not an animal, who is it?",
+   
+    "rightAnswer" : "The glove"
+  },
+  {
+    "question":"6- What is the best possible treatment for dandruff?",
+   
+    "rightAnswer" : "Baldness"
+  },
+  {
+    "question":"7- Something that does not dissolve in water, and does not live on earth or in the sky, what is it?",
+   
+    "rightAnswer" : "Fish"
+  },
+  {
+    "question":"8- If a huge elephant fell into a lake, how would it get out?",
+   
+    "rightAnswer" : "Wet"
+  },
+  {
+    "question":"9- Why is the zebra considered an ancient animal?",
+   
+    "rightAnswer" : "Because it's black and white"
+  },
+  {
+    "question":"10- What is the function of the ear in the human body?",
+   
+    "rightAnswer" : "To hold the glasses."
+  },
+  {
+    "question":"11- How many letters are there?",
+  
+    "rightAnswer" : "22"
+  },
+  {
+    "question":"12- What is the color resulting from mixing yellow with blue?",
+   
+    "rightAnswer" : "Green"
+  },
+  {
+    "question":"13- How many zeros are there in a trillion?",
+   
+    "rightAnswer" : "Twelve"
+  },
+  {
+    "question":"14- How many times has Brazil won the World Cup?",
+   
+    "rightAnswer" : "5 Times"
+  },
+  {
+    "question":"15- What is the disease called the disease of kings?",
+   
+    "rightAnswer" : "Gout"
+  },
+  {
+    "question":"16- What is the most dangerous prison in the world, located on an island surrounded by water from all directions?",
+   
+    "rightAnswer" : "Alcatraz Prison"
+  },
+  {
+    "question":"17- What is the highest plateau in the world?",
+   
+    "rightAnswer" : "Tibet Platosu"
+  },
+  {
+    "question":"18- How many minutes are in 5 hours?",
+   
+    "rightAnswer" : "300 minutes"
+  },
+  {
+    "question":"19- Mention the name of an African country whose name begins with the letter N?",
+   
+    "rightAnswer" : "Nigeria"
+  },
+  {
+    "question":"20- Mention the name of an animal that starts with the letter C?",
+   
+    "rightAnswer" : "Caterpillar"
+  },
+  {
+    "question":"21- Who is he who remains bound if guarded by one person, but if guarded by many he is freed from his chains?",
+   
+    "rightAnswer" : "Secret"
+  },
+  {
+    "question":"22- What is red and green and looks like half a watermelon?",
+   
+    "rightAnswer" : "The second half of that watermelon"
+  },
+  {
+    "question":"23- What are the three consecutive numbers whose product is 990?",
+   
+    "rightAnswer" : "9, 10, 11"
   }
 
 ]
