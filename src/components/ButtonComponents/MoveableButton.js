@@ -15,9 +15,11 @@ function MoveableButton(props) {
             if(isFollowing )
             {
                 setPosition({ x :  e.clientX - 30 , y : e.clientY - 15 });
-                refDiv.current.className = refDiv.current.className + " z-3"
-                if(refDiv.current.className !== refDiv.current.className + " z-3"){
-                  refDiv.current.className = refDiv.current.className + " z-3"
+                
+                if(  refDiv.current.className.toString().search(" z-3") <= 0 ){
+               
+                  refDiv.current.className = refDiv.current.className + " z-3";
+                
                 }
                 
             }else
@@ -32,7 +34,7 @@ function MoveableButton(props) {
         window.addEventListener("mouseup",  clickMouseUp );
 
           
-    },[isFollowing])
+    },[isFollowing,refDiv,props.pos.x , props.pos.y , props.pos])
     
 
     //Methods to Listen to the user
@@ -52,7 +54,7 @@ function MoveableButton(props) {
 
   return (
       // A Button With Some Style
-      <button ref={refDiv}  onPointerDown={clickMouseDown} onPointerUp={clickMouseUp}   style={{top:position.y,left:position.x,translate:`rotate(${props.style}deg)` } }  className={" border-0 m-auto text-white p-2  position-absolute pe-3 ps-3 rounded-pill border-bottom border-3  border-"+props.color +  "-subtle  bg-"   + props.color} >{props.text} </button>
+      <button ref={refDiv} name={props.text}  onPointerDown={clickMouseDown} onPointerUp={clickMouseUp}   style={{top:position.y,left:position.x,translate:`rotate(${props.style}deg)` } }  className={" border-0 m-auto text-white p-2  position-absolute pe-3 ps-3 rounded-pill border-bottom border-3  border-"+props.color +  "-subtle  bg-"   + props.color} >{props.text} </button>
      
   );
 }

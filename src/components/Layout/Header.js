@@ -28,30 +28,34 @@ function Header() {
         localStorage.setItem("start", "false")
         setStart(false)
         setCount(0)
+        localStorage.getItem("count" , 0)
     }
 
-    useEffect(()=>{
-        function pos()
-        {
+    // useEffect(()=>{
+    //     function pos()
+    //     {
            
             
-            if(resRef)
-            {
-                const hor = resRef.current.offsetLeft + 20 ;
-                const ver = resRef.current.offsetTop + 8 ;
-                console.log(resRef);
+    //         if(resRef !== null)
+    //         {
+    //             const hor = resRef.current.offsetLeft + 20 ;
+    //             const ver = resRef.current.offsetTop + 8 ;
+    //             console.log(resRef);
                 
-                setHammerPosition({x : hor  , y : ver })
+    //             setHammerPosition({x : hor  , y : ver })
                 
-            }
-        }
+    //         }
+    //     }
       
 
-        window.addEventListener("resize" , pos)
-        pos();
+    //     window.addEventListener("resize" , pos)
+    //     pos();
 
+    //     return () =>{
+    //         window.removeEventListener('resize' , pos)
+    //     }
        
-    },[resRef,window])
+    // },[resRef,window])
     
     return (<header className="w-75  rounded-5  d-flex align-items-center border position-absolute start-50  translate-middle z-3  " style={{backgroundColor:"#c47d51",borderBottom:"#e3a57f",top:"12%"}}>
             <ul className="w-100 list-unstyled d-flex justify-content-around align-items-center m-2  ">
@@ -63,11 +67,11 @@ function Header() {
                 </li>
                 <li className=" z-3 text-white">
                     
-                    {hammerPosition ? <Hammer pos={{x : hammerPosition.x , y :  hammerPosition.y}} /> : null}
+                    {hammerPosition ? <Hammer pos={{x : hammerPosition.x , y :  hammerPosition.y}} /> : <></>}
                    
-                    <Link  ref={resRef} onClick={Rest} to={"/"} className="hover_btn text-decoration-none  text-white bg-primary text-white  btn border-0 ps-3 pe-3 rounded-pill border-bottom border-primary-subtle border-3 fs-5" >
+                    {/* <Link  ref={resRef} onClick={Rest} to={"/"} className="hover_btn text-decoration-none  text-white bg-primary text-white  btn border-0 ps-3 pe-3 rounded-pill border-bottom border-primary-subtle border-3 " >
                         Rest
-                    </Link>
+                    </Link> */}
                 </li>
                 <li className="">
                     <Link onClick={surrender} to={"/"} className="hover_btn text-decoration-none bg-danger text-white btn border-0 ps-3 pe-3 rounded-pill border-bottom border-danger-subtle border-3 fs-5" >

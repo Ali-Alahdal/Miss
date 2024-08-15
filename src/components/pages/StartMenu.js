@@ -9,9 +9,12 @@ function StartMenu() {
     const {start, setStart} = useContext(Start);
 
     function handleStart(){
-        setCount(count + 1)
+        // setCount(count + 1)
         localStorage.setItem("start", "true")
-        setStart(true)
+        setStart("true")
+        console.log("Changed");
+        setCount(localStorage.getItem("count"))
+        
     }
     return ( 
         <>

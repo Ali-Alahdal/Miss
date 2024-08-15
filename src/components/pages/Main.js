@@ -9,61 +9,84 @@ import Start from "../../Context/StartContext";
 import StartMenu from "./StartMenu";
 import BreakableButton from "../ButtonComponents/BreakableButton";
 import Hammer from "../ButtonComponents/Hammer";
-function Main() {
+import IsCorrect from "../../Context/IsCorrectContext";
+function Main(props) {
 
     //Define States for The Movalbe Button to know his Current Position
     const {start , setStart } = useContext(Start)
     
 
     const [currentQuestion, setCurrentQuestion] = useState("");
-    const [currentAnswers, setCurrentAnswers] = useState([]);
+ 
     const [correctAnswer, setCorrectAnswer] = useState("");
     const {count, setCount} = useContext(Count);
-    const [isCorrect, setIsCorrect] = useState(false)
+    const {isCorrect, setIsCorrect} = useContext(IsCorrect)
+    const [answerBtn , setAnswerBtn] = useState();
+    const [allBtns , setAllBtns] = useState()
 
     useEffect(() => {
-        if(count){
+        if(count && count <  Data.length ){
             setCurrentQuestion(Data[count].question);
-            setCurrentAnswers(Data[count].answers);
             setCorrectAnswer(Data[count].rightAnswer);
-            setCount(parseInt(localStorage.getItem("count")))
+            setCount(parseInt(localStorage.getItem("count")));
+            console.log(count , start);
         }else{
-            localStorage.setItem("count" , 0)
-            setCount(parseInt(localStorage.getItem("count")))
-            setCurrentQuestion(Data[0].question);
-            setCurrentAnswers(Data[0].answers);
-            setCorrectAnswer(Data[0].rightAnswer);
+            if(count >=  Data.length)
+            {
+                localStorage.setItem("count" , 0)
+                localStorage.setItem("start" , "false");
+                setStart("false");
+                setCount(0);
+            }else{
+                // localStorage.setItem("count" , 0)
+                // setCount(parseInt(localStorage.getItem("count")))
+                // setCurrentQuestion(Data[0].question);
+                // setCorrectAnswer(Data[0].rightAnswer);
+            }
+          
         
         }
+        
+        
       
-    }, [count]);
+    }, [count,start,isCorrect,correctAnswer,answerBtn]);
 
     useEffect(()=>{
-        const startValue = localStorage.getItem("start");
-        if (startValue) {
-            setStart(startValue === "true");
-        }
-    },[])
+      
 
 
-    function checkAnswer(e){
-        
-        if(e.target.name === correctAnswer){
-            setIsCorrect(true)
+        setAllBtns(props.btns.current.children)
+        if( allBtns){
+            Object.values( Object.entries(allBtns)).map((btn , index)=>{
+                if(btn[1].name == correctAnswer)
+                {
+                    setAnswerBtn(btn[1]);
+                   
+                }   
             
+            })
+        }
+        console.log("worked" , props.btns.current.children);
+       
+      
+       
+        
+    },[allBtns,props.btns,correctAnswer,isCorrect,start])
+
+
+    
+
+      useEffect(() =>{
+        if(isCorrect){
             setTimeout(() => {
                 setIsCorrect(false);
                 const currentCount = count + 1;
                 setCount(prev => prev + 1);
                 localStorage.setItem("count" , parseInt( currentCount));
                 
-            }, 1 * 1000);
-            
-        }else{
-            console.log("wrong Answer");
+            }, 3 * 1000);
         }
-    
-      }
+      },[isCorrect])
     
    
 
@@ -89,7 +112,7 @@ function Main() {
             
             <div className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center border rounded-4 z-2 position-absolute  start-50 translate-middle" style={{backgroundColor:"#c47d51" , top:"55%"}}>
               
-                {start && count != null ? <Question question={currentQuestion} checkAnswer={checkAnswer} answers={currentAnswers} isCorrect={isCorrect} />
+                {start === "true" && answerBtn && correctAnswer  && count >= 0  ? <Question question={currentQuestion}  isCorrect={setIsCorrect} child={answerBtn} />
                 :
                 <StartMenu/>}
               
