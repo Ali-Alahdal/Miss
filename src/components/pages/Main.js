@@ -110,7 +110,7 @@ function Main(props) {
                 </div>
             </div> */}
             
-            <div className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center rounded-4 z-2 position-absolute  start-50 translate-middle" style={{backgroundColor:"#c47d51" , top:"55%"}}>
+            <div className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center border rounded-4 z-2 position-absolute  start-50 translate-middle" style={{backgroundColor:"#c47d51" , top:"55%"}}>
               
                 {start === "true" && answerBtn && correctAnswer  && count >= 0  ? <Question question={currentQuestion}  isCorrect={setIsCorrect} child={answerBtn} />
                 :

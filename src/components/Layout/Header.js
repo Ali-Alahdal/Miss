@@ -61,7 +61,7 @@ function Header() {
             <ul className="w-100 list-unstyled d-flex justify-content-around align-items-center m-2  ">
                 <li className="">
               
-                    <Link onClick={Back} to={"/"} className="hover_btn text-decoration-none bg-warning text-white btn border-0 ps-3 pe-3 rounded-pill  border-bottom border-warning-subtle border-3  " >
+                    <Link onClick={Back} to={"/"} className="hover_btn text-decoration-none bg-warning text-white btn border-0 ps-3 pe-3 rounded-pill  border-bottom border-warning-subtle border-3  fs-5" >
                     <i class="bi bi-arrow-left "></i> Back
                     </Link>
                 </li>
@@ -74,7 +74,7 @@ function Header() {
                     </Link> */}
                 </li>
                 <li className="">
-                    <Link onClick={surrender} to={"/"} className="hover_btn text-decoration-none bg-danger text-white btn border-0 ps-3 pe-3 rounded-pill border-bottom border-danger-subtle border-3" >
+                    <Link onClick={surrender} to={"/"} className="hover_btn text-decoration-none bg-danger text-white btn border-0 ps-3 pe-3 rounded-pill border-bottom border-danger-subtle border-3 fs-5" >
                         <i className="bi bi-flag-fill"></i>  Surrender
                     </Link>
                 </li>
