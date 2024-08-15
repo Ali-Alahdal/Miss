@@ -13,7 +13,8 @@ import IsCorrect from "../../Context/IsCorrectContext";
 function Main(props) {
 
     //Define States for The Movalbe Button to know his Current Position
-    const {start , setStart } = useContext(Start)
+    const {start , setStart } = useContext(Start);
+    //Defining States
     
 
     const [currentQuestion, setCurrentQuestion] = useState("");
@@ -25,10 +26,10 @@ function Main(props) {
     const [allBtns , setAllBtns] = useState()
 
     useEffect(() => {
-        if(count && count <  Data.length ){
-            setCurrentQuestion(Data[count].question);
-            setCorrectAnswer(Data[count].rightAnswer);
+        if( count <  Data.length ){
             setCount(parseInt(localStorage.getItem("count")));
+            setCurrentQuestion(Data[parseInt(localStorage.getItem("count"))].question);
+            setCorrectAnswer(Data[parseInt(localStorage.getItem("count"))].rightAnswer);
             console.log(count , start);
         }else{
             if(count >=  Data.length)
@@ -49,7 +50,7 @@ function Main(props) {
         
         
       
-    }, [count,start,isCorrect,correctAnswer,answerBtn]);
+    }, [count,start,isCorrect,correctAnswer,answerBtn,currentQuestion]);
 
     useEffect(()=>{
       
@@ -88,7 +89,7 @@ function Main(props) {
         }
       },[isCorrect])
     
-   
+      
 
     return ( <>
             
@@ -110,7 +111,7 @@ function Main(props) {
                 </div>
             </div> */}
             
-            <div className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center border rounded-4 z-2 position-absolute  start-50 translate-middle" style={{backgroundColor:"#c47d51" , top:"55%"}}>
+            <div  className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center border rounded-4 z-2 translate-middle start-50 position-absolute " style={{backgroundColor:"#c47d51" , top:"55%"}}>
               
                 {start === "true" && answerBtn && correctAnswer  && count >= 0  ? <Question question={currentQuestion}  isCorrect={setIsCorrect} child={answerBtn} />
                 :

@@ -39,7 +39,10 @@ function ButtonHolder(props) {
                     currentDiv.appendChild(childPosition);
                   
                     setIsHeld(true);
-                    setIsCorrect(true)
+                    setTimeout(() => {
+                        setIsCorrect(true);    
+                    }, 2 * 1000);
+                    
                    
                 }
             }

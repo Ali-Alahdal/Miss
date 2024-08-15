@@ -13,7 +13,7 @@ function Hammer(props) {
         {
             if(isFollowing )
             {
-                setPosition({ x :  e.clientX  , y : e.clientY });
+                setPosition({ x :  e.clientX -  165  , y : e.clientY - 50  });
                 if(!isMoved){
                   setIsMoved(true);
                 }

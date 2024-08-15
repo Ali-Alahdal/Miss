@@ -13,10 +13,10 @@ function StartMenu() {
         localStorage.setItem("start", "true")
         setStart("true")
         console.log("Changed");
-        setCount(localStorage.getItem("count"))
+        setCount(0)
         
     }
-    return ( 
+    return (  
         <>
             <div className="w-100 text-center ">
 
