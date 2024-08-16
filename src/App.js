@@ -31,20 +31,7 @@ function App() {
       setStart("false")
     }
   },[])
-  useEffect(()=>{
-     
-      setCount(parseInt( localStorage.getItem("count")));
-  
-      if(renderd == 0)
-      {
-        setRenderd(refBtnsDiv.current.children.length)
-        
-        
-        
-      }
-     
-      
-    },[count])
+ 
   return (
     <>
         <div className='w-100 h-100 bg-secondary align-center pt-5'>

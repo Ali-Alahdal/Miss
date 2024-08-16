@@ -27,9 +27,10 @@ function Main(props) {
     const [allBtns , setAllBtns] = useState()
 
     useEffect(() => {
+       
         if(count && start){
 
-        
+       
         if( count <  Data.length ){
             setCount(parseInt(localStorage.getItem("count")));
             setCurrentQuestion(Data[parseInt(localStorage.getItem("count"))].question);
@@ -39,21 +40,19 @@ function Main(props) {
             if(count >=  Data.length)
             {
                 localStorage.setItem("count" , 0)
-                localStorage.setItem("start" , "false");
-                setStart("false");
+               
+                
                 setCount(0);
-            }else{
-                // localStorage.setItem("count" , 0)
-                // setCount(parseInt(localStorage.getItem("count")))
-                // setCurrentQuestion(Data[0].question);
-                // setCorrectAnswer(Data[0].rightAnswer);
             }
-          
         
         }
     }else{
-        setCount(0)
-        setStart("false")
+        if(localStorage.getItem("start") == null){
+            setCount(0)
+            setStart("false")
+            
+        }
+     
     }
         
         
@@ -79,6 +78,7 @@ function Main(props) {
        
       
        
+        console.log(start , count);
         
     },[allBtns,props.btns,correctAnswer,isCorrect,start])
 
@@ -121,7 +121,7 @@ function Main(props) {
             
             <div  className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center border rounded-4 z-1 translate-middle start-50 position-absolute " style={{backgroundColor:"#c47d51" , top:"55%"}}>
               
-                {start === "true" && answerBtn && correctAnswer  && count >= 0  ? <Question question={currentQuestion}  isCorrect={setIsCorrect} child={answerBtn} />
+                {start == "true" && answerBtn && correctAnswer  && count >= 0  ? <Question question={currentQuestion}  isCorrect={setIsCorrect} child={answerBtn} />
                 :
                 <StartMenu/>}
               {/* <BreakableButtonHolder child={answerBtn}  style={" border-3 border-secondary me-4  rounded-pill btn   ps-5 pe-5 "}
