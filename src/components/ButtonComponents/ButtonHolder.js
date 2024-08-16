@@ -18,7 +18,7 @@ function ButtonHolder(props) {
         function settleButton ()
         {
             const childPosition = props.child;
-            console.log(props.child);
+            
             
             if(childPosition && !isHeld )
             {
@@ -39,7 +39,10 @@ function ButtonHolder(props) {
                     currentDiv.appendChild(childPosition);
                   
                     setIsHeld(true);
-                    setIsCorrect(true)
+                    setTimeout(() => {
+                        setIsCorrect(true);    
+                    }, 2 * 1000);
+                    
                    
                 }
             }
@@ -57,9 +60,11 @@ function ButtonHolder(props) {
 
     },[IsCorrect,props.child]);
      
+
+
     return (
         <>
-            <div ref={refDiv}   className={ !isHeld ? "position-relative border border-3 border-secondary text-center m-auto rounded-pill " :  " position-relative  text-center m-auto " }  style={{width:"15%",height:50}}>
+            <div ref={refDiv}   className={ !isHeld ? "position-relative border border-3 border-secondary text-center m-auto rounded-pill " :  " position-relative  p-auto  text-center m-auto  " }  style={{width:"15%",height:50}}>
                 
             </div>
         

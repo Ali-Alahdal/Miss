@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-
+import { useState, useEffect, useRef, useContext } from "react";
+import HammerPosition from "../../Context/HammerPositionContext";
 function Hammer(props) {
 
   const refDiv = useRef(null);
@@ -7,13 +7,16 @@ function Hammer(props) {
     const [isFollowing, setIsFollowing] = useState(false);
     const [position, setPosition] = useState({ x: props.pos.x , y: props.pos.y });
     const [isMoved , setIsMoved ] = useState(false);
+
+    const {hammerPosition , setHammerPosition } = useContext(HammerPosition);
     useEffect(() =>{
         //Follow 
         function follow(e)
         {
             if(isFollowing )
             {
-                setPosition({ x :  e.clientX  , y : e.clientY });
+                setPosition({ x :  e.clientX -  165  , y : e.clientY - 50  });
+                setHammerPosition({x :  e.clientX -  165  , y : e.clientY - 50 })
                 if(!isMoved){
                   setIsMoved(true);
                 }
@@ -26,6 +29,12 @@ function Hammer(props) {
         // Listen to the mouse of the user
         window.addEventListener("mousemove" ,  follow );
         window.addEventListener("mouseup",  clickMouseUp );
+
+
+        return() =>{
+          window.removeEventListener("mousemove" , follow);
+          window.removeEventListener("mouseup" , clickMouseUp)
+        }
     },[isFollowing])
     
     useEffect(()=>{
@@ -45,7 +54,7 @@ function Hammer(props) {
     function clickMouseDown()
     {
 
-     setIsFollowing(true) 
+      setIsFollowing(true) 
   
     }
     function clickMouseUp()

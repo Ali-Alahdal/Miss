@@ -13,14 +13,14 @@ function StartMenu() {
         localStorage.setItem("start", "true")
         setStart("true")
         console.log("Changed");
-        setCount(localStorage.getItem("count"))
+        setCount(0)
         
     }
-    return ( 
+    return (  
         <>
             <div className="w-100 text-center ">
 
-                <h1 className="mb-5 text-white">Game Name</h1>
+                <h1 className="mb-5 text-white">Try Your Luck !</h1>
 
                 <div className="d-flex justify-content-center align-items-center ">
                     <ul className="list-unstyled d-flex mb-0 text-white  ">
