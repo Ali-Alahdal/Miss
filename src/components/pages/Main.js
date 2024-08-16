@@ -27,6 +27,9 @@ function Main(props) {
     const [allBtns , setAllBtns] = useState()
 
     useEffect(() => {
+        if(count && start){
+
+        
         if( count <  Data.length ){
             setCount(parseInt(localStorage.getItem("count")));
             setCurrentQuestion(Data[parseInt(localStorage.getItem("count"))].question);
@@ -48,6 +51,10 @@ function Main(props) {
           
         
         }
+    }else{
+        setCount(0)
+        setStart("false")
+    }
         
         
       
