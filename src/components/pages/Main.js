@@ -10,6 +10,7 @@ import StartMenu from "./StartMenu";
 import BreakableButton from "../ButtonComponents/BreakableButton";
 import Hammer from "../ButtonComponents/Hammer";
 import IsCorrect from "../../Context/IsCorrectContext";
+import BreakableButtonHolder from "../ButtonComponents/BreakableButtonHolder";
 function Main(props) {
 
     //Define States for The Movalbe Button to know his Current Position
@@ -30,7 +31,7 @@ function Main(props) {
             setCount(parseInt(localStorage.getItem("count")));
             setCurrentQuestion(Data[parseInt(localStorage.getItem("count"))].question);
             setCorrectAnswer(Data[parseInt(localStorage.getItem("count"))].rightAnswer);
-            console.log(count , start);
+            
         }else{
             if(count >=  Data.length)
             {
@@ -111,12 +112,13 @@ function Main(props) {
                 </div>
             </div> */}
             
-            <div  className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center border rounded-4 z-2 translate-middle start-50 position-absolute " style={{backgroundColor:"#c47d51" , top:"55%"}}>
+            <div  className="w-75 m-auto mt-4 h-75 d-flex align-items-center text-center border rounded-4 z-1 translate-middle start-50 position-absolute " style={{backgroundColor:"#c47d51" , top:"55%"}}>
               
                 {start === "true" && answerBtn && correctAnswer  && count >= 0  ? <Question question={currentQuestion}  isCorrect={setIsCorrect} child={answerBtn} />
                 :
                 <StartMenu/>}
-              
+              {/* <BreakableButtonHolder child={answerBtn}  style={" border-3 border-secondary me-4  rounded-pill btn   ps-5 pe-5 "}
+                            styleS={"border-3 border-secondary  rounded-pill btn ps-4 pe-4"} /> */}
                
             </div>
        

@@ -6,6 +6,7 @@ function MoveableButton(props) {
     //Defining States
     const [isFollowing, setIsFollowing] = useState(false);
     const [position, setPosition] = useState({ x: props.pos.x, y: props.pos.y });
+    const [currentColor , setCurrentColor ] = useState(""); 
 
     useEffect(() =>{
         
@@ -16,12 +17,7 @@ function MoveableButton(props) {
             {
                 setPosition({ x :  e.clientX - 30 , y : e.clientY - 15 });
                 
-                if(  refDiv.current.className.toString().search(" z-3") <= 0 ){
-               
-                  refDiv.current.className = refDiv.current.className + " z-3";
-                
-                }
-                
+             
             }else
             {
               setPosition({ x :  position.x  , y : position.y });
@@ -33,8 +29,19 @@ function MoveableButton(props) {
         window.addEventListener("mousemove" ,  follow );
         window.addEventListener("mouseup",  clickMouseUp );
 
-          
+      return () =>{
+        window.removeEventListener("mousemove" , follow);
+        window.removeEventListener("mouseup" , clickMouseUp) 
+      }
     },[isFollowing,refDiv,props.pos.x , props.pos.y , props.pos])
+
+    useEffect(()=>{
+      const colors = [
+        "success" , "danger" , "info" , "primary" , "warning" , "secondary"
+      ]
+      const rC =  parseInt(Math.random()*6);
+      setCurrentColor(colors[rC])
+    },[])
     
 
     //Methods to Listen to the user
@@ -54,7 +61,7 @@ function MoveableButton(props) {
 
   return (
       // A Button With Some Style
-      <button ref={refDiv} name={props.text}  onPointerDown={clickMouseDown} onPointerUp={clickMouseUp}   style={{top:position.y,left:position.x,translate:`rotate(${props.style}deg)` } }  className={" border-0 m-auto text-white p-2  position-absolute pe-3 ps-3 rounded-pill border-bottom border-3  border-"+props.color +  "-subtle  bg-"   + props.color} >{props.text} </button>
+      <button ref={refDiv} name={props.text}  onPointerDown={clickMouseDown} onPointerUp={clickMouseUp}   style={{top:position.y,left:position.x,translate:`rotate(${props.style}deg)` } }  className={" border-0 m-auto text-white p-2  position-absolute pe-3 ps-3 rounded-pill border-bottom border-3 z-3 border-"+currentColor +  "-subtle  bg-"   + currentColor} >{props.text} </button>
      
   );
 }
