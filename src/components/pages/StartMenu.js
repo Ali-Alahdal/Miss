@@ -13,7 +13,7 @@ function StartMenu() {
         localStorage.setItem("start", "true")
         setStart("true")
         console.log("Changed");
-        setCount(0)
+        setCount(2)
         
     }
     return (  
