@@ -14,14 +14,23 @@ import HammerPosition from './Context/HammerPositionContext';
 import RandomButtons from './components/ButtonComponents/RandomButton';
 function App() {
   
-  const [count , setCount ] = useState(localStorage.getItem("count"))
-  const [start , setStart ] = useState(localStorage.getItem("start"))
+  const [count , setCount ] = useState(0)
+  const [start , setStart ] = useState("false")
   const [hammerPosition , setHammerPosition] = useState({x : 0 , y : 0});
   const [isCorrect , setIsCorrect] = useState(false);
   const refBtnsDiv = useRef();
   const [renderd , setRenderd] = useState(0); 
  
-
+  useEffect(()=>{
+    if(localStorage.getItem("count") == null){
+      localStorage.setItem("count" , 0);
+      setCount(0)
+    }
+    if(localStorage.getItem("start") == null){
+      localStorage.setItem("start" , "false");
+      setStart("false")
+    }
+  },[])
   useEffect(()=>{
      
       setCount(parseInt( localStorage.getItem("count")));
